@@ -30,22 +30,16 @@ export const getLiveRooms = () => {
 }
 
 export const deleteLiveRoom = streamlink => {
+    console.log(streamlink)
     return fetch(`${API}/livestream/findstreamlink?streamlink=${streamlink}`, {
         method: 'DELETE',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(streamlink)
-    })
+        redirect: 'follow'
+        })
         .then(response => response.json())
         .then(resjson => {return resjson})
         .catch(err => console.log(err))
 
 }
-
-
-
 
 // fetching the API for signup and exporting to Signup.js
 export const signup = user => {

@@ -62,7 +62,7 @@ class AdminStream extends React.Component {
     destroyRoom = (e) => {
 
         //to delete from backend
-        deleteLiveRoom(roomobj.url)
+        deleteLiveRoom(roomobj.url.toString())
         .then(response => console.log(response))
 
 
