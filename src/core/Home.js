@@ -40,29 +40,29 @@ const Home = () => {
 
                         <div className="home-card">
                             <img src={JSLogo}  alt="logo" className="card-logos"></img>
-                            React
+                            JavaScript
                         </div>
 
                         <div className="home-card">
                             <img src={ReactNativeLogo}  alt="logo" className="card-logos"></img>
-                            React
+                            ReactNative
                         </div>
                     </div>
                     <div className="home-card-section">
 
                         <div className="home-card">
                             <img src={HTMLLogo}  alt="logo" className="card-logos"></img>
-                            React
+                            HTML
                         </div>
 
                         <div className="home-card">
                             <img src={PythonLogo}  alt="logo" className="card-logos"></img>
-                            React
+                            Python
                         </div>
                         
                         <div className="home-card">
                             <img src={AWSLogo}  alt="logo" className="card-logos"></img>
-                            React
+                            AWS
                         </div>
                     </div>
                 </div>
