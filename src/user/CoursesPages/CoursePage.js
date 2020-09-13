@@ -12,23 +12,26 @@ class CoursePage extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0,0);
+    //Call to the backend to get all the live room details and render the streams
     getLiveRooms().then(response => this.renderCards(response.streamdetails,this.props.match.params.courseName))
   }
 
+  //rendering the stream cards / boxes
   renderCards = (streams,course) => {
       document.getElementById('active-streams').innerHTML = '';
 
       let count = 0;
 
       streams.map(stream => {
-  
+        //for each stream we're checking if the topic of the stream is the same as the name of the course we're on, if so, we render it.
         if(stream.topic == course) {
           count++;
+          //creating a div / card element and adding the stream details to it
           let ccard = document.createElement('div');
           ccard.setAttribute('class','learner-course-streams')
           ccard.innerHTML = `<h1>${stream.about}</h1><p>By ${stream.educatorname}</p>`;
 
+          //when you click on any stream card it'll load another player from the DAILY API
           ccard.onclick = (e)=> {
             document.getElementById('active-streams').innerHTML = '';
             let callFrame = DailyIframe.createFrame(document.getElementById('active-streams'));

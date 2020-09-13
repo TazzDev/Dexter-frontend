@@ -15,6 +15,7 @@ export const addLiveRoom = room => {
 
 }
 
+//function to return all the current live rooms
 export const getLiveRooms = () => {
     return fetch(`${API}/livestream/find`, {
         method: 'GET',

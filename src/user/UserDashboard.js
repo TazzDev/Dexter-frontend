@@ -8,8 +8,8 @@ import CourseCard from './CourseCard';
 
 //image imports 
 
-import ReactLogo from '../images/1.jpg';
-import AWSLogo from '../images/3.jpg';
+import ReactLogo from '../images/react_car.jpeg';
+import AWSLogo from '../images/aws_car.jpg';
 import HTMLLogo from '../images/4.jpg';
 
 const contentStyle = {
@@ -33,7 +33,7 @@ class Dashboard extends Component {
     return (
       <Layout
         title="Dashboard"
-        description={`Welcome`}
+        description={`Welcome ${isAuthenticated().user.name}`}
         className="container-fluid">
         <Carousel autoplay>
           <div>
