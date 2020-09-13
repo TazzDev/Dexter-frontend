@@ -2,7 +2,7 @@ import React from "react";
 import { DAILYAPI } from "../config";
 import Layout from "../core/Layout";
 import DailyIframe from '@daily-co/daily-js';
-import { addLiveRoom, deleteLiveRoom } from "../auth";
+import { addLiveRoom, deleteLiveRoom, isAuthenticated } from "../auth";
 
 
 let roomobj = {};
@@ -33,15 +33,14 @@ class AdminStream extends React.Component {
 
         //to add room details to backend
 
+        
         const roomDetails = {
-            educatorname: 'Thomson',
+            educatorname: isAuthenticated().user.name || 'Educator',
             streamlink: room.url,
             topic: this.props.match.params.courseName,
-            about: 'components'
+            about: document.getElementById('about').value || 'Q-&-A'
         }
 
-
-        
         addLiveRoom(roomDetails)
         .then(res => console.log(res))
     }
@@ -96,6 +95,8 @@ class AdminStream extends React.Component {
         </Layout>
         <div id="educator-player">
             <div id="controls-player">
+                <label>Please mention the description for this course:</label>
+                <input type="text" id="about"></input>
                 <button id="create-room-button" onClick={this.createRoom}>Create a session</button>
                 <button id="destroy-room-button" onClick={this.destroyRoom}>Close session</button>
             </div>

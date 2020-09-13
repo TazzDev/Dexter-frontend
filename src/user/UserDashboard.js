@@ -6,9 +6,15 @@ import { Row, Col } from 'antd';
 import { Carousel } from 'antd';
 import CourseCard from './CourseCard';
 
+//image imports 
+
+import ReactLogo from '../images/1.jpg';
+import AWSLogo from '../images/3.jpg';
+import HTMLLogo from '../images/4.jpg';
+
 const contentStyle = {
-  height: '350px',
-  width: '900px',
+  height: '100%',
+  width: '60%',
   color: '#fff',
   lineHeight: '350px',
   textAlign: 'center',
@@ -34,7 +40,7 @@ class Dashboard extends Component {
             <h3 style={contentStyle}>
               <img
                 className="d-block w-100"
-                src="https://i.ytimg.com/vi/QIy874Wn1kM/maxresdefault.jpg"
+                src={ReactLogo}
                 alt="First slide"
                 height="350px"
               />
@@ -44,7 +50,7 @@ class Dashboard extends Component {
             <h3 style={contentStyle}>
               <img
                 className="d-block w-100"
-                src="https://hackernoon.com/images/z2xg2bpo.jpg"
+                src={AWSLogo}
                 alt="First slide"
                 height="350px"
               />
@@ -54,7 +60,7 @@ class Dashboard extends Component {
             <h3 style={contentStyle}>
               <img
                 className="d-block w-100"
-                src="https://www.futuremind.com/m/cache/c8/15/c8150d863e584ed42ccfbdc3f3f1aa3a.jpg"
+                src={HTMLLogo}
                 alt="First slide"
                 height="350px"
               />
