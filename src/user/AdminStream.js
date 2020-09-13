@@ -22,6 +22,7 @@ class AdminStream extends React.Component {
     createVideo = (room) => {
 
         //converting div to playable iframe
+        document.getElementById('room-video').innerHTML = '';
 
         let callFrame = DailyIframe.createFrame(document.getElementById('room-video'));
         
@@ -47,6 +48,8 @@ class AdminStream extends React.Component {
 
 
     createRoom = (e) => {
+        document.getElementById('room-video').innerHTML = "<h1>Loading, please wait...</h1>"
+
         const url = "https://api.daily.co/v1/rooms/";
         fetch(url,{
             method: 'POST',
@@ -59,7 +62,7 @@ class AdminStream extends React.Component {
         .then(final => this.createVideo(final))
     }
 
-    destroyRoom = (e) => {
+    destroyRoom = () => {
 
         //to delete from backend
         deleteLiveRoom(roomobj.url.toString())
@@ -76,10 +79,14 @@ class AdminStream extends React.Component {
             }
         })
         .then(response => console.log(response))
+
+        document.getElementById('room-video').innerHTML = "<h1>Please start another session to stream again</h1>"
     }
 
     componentWillUnmount() {
+        if (roomobj.url !== undefined){
         this.destroyRoom()
+        }
     }
 
     render() {
@@ -87,9 +94,13 @@ class AdminStream extends React.Component {
         <React.Fragment>
         <Layout title='Dashboard' description='Your Educator Dashboard'>
         </Layout>
-        <div id="room-video"><h1>Video will appear here once you've created a session</h1></div>
-        <button id="create-room-button" onClick={this.createRoom}>Create a session</button>
-        <button id="destroy-room-button" onClick={this.destroyRoom}>Close a session</button>
+        <div id="educator-player">
+            <div id="controls-player">
+                <button id="create-room-button" onClick={this.createRoom}>Create a session</button>
+                <button id="destroy-room-button" onClick={this.destroyRoom}>Close session</button>
+            </div>
+            <div id="room-video"><h1>Please click on 'Create a session' to begin.</h1></div>
+        </div>
         </React.Fragment>
     )}
 }
