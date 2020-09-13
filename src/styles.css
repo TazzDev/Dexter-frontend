@@ -1,0 +1,147 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#homepage {
+    height: 100vh;
+    width: 100vw;
+    background: #eae7ed;
+    display: flex;
+}
+
+#brand {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo {
+    margin-top: 20%;
+    width: 25%;
+    /* align-self: center; */
+    animation: zoomin 1000ms forwards;
+}
+
+@keyframes zoomin {
+    100% {
+        width: 80%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+#subtext {
+    color: transparent;
+    align-self: center;
+    /*margin: 0;*/
+    font-weight: 1000;
+    animation: fadein 1000ms 1000ms forwards;
+}
+
+@keyframes fadein {
+    100% {
+        color: #7250cd
+    }
+}
+
+.suform {
+    margin: 5% auto auto auto;
+    padding: 2%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+}
+
+.suform button {
+    max-width: 30%;
+    align-self: center;
+}
+
+
+/* This would be the rest of the HomePage */
+/* Images borrowed from CDNs and Shutterstock*/
+
+#home-card-section {
+    padding-top: 5%;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-card {
+    height: 25%;
+    width: 30%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    margin-right: 3%;
+}
+
+.card-logos {
+    width: 90%;
+    height: 90%;
+}
+
+/*Educator dash styling*/
+
+#edu-dash-title{
+    margin: 2% 0 2% 10%;
+}
+
+#edu-courses {
+    width: 80%;
+    height: 75%;
+    margin: auto;
+    padding: 2%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.edu-card {
+    background: blue;
+    width: 30%;
+    height: 100%;
+    margin: 0 3% 2% 0;
+}
+
+/*Educator create-room and video box styling */
+
+#room-video {
+    background: rgba(77, 77, 77, 0.993);
+    height: 70vh;
+    width: 70vw;
+    margin: auto;
+}
+
+#room-video h1 {
+    font-size: 3vmax;
+}
+
+
+
+/* --- learner section --- */
+
+#active-streams {
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    background: rgb(185, 185, 185);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.learner-course-streams {
+    width: 30%;
+}
