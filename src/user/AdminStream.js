@@ -60,6 +60,12 @@ class AdminStream extends React.Component {
     }
 
     destroyRoom = (e) => {
+
+        //to delete from backend
+        deleteLiveRoom(roomobj.url)
+        .then(response => console.log(response))
+
+
         //For the daily room destruction
         const url = `https://api.daily.co/v1/rooms/${roomobj.name}`;
         fetch(url,{
@@ -69,10 +75,6 @@ class AdminStream extends React.Component {
                 "authorization": `Bearer 2bd2f54b5622d07b584c375d39c46a24fe570c3554669f15ab6d37fc4e0e1f4f`
             }
         })
-        .then(response => console.log(response))
-
-        //to delete from backend
-        deleteLiveRoom(roomobj)
         .then(response => console.log(response))
     }
 

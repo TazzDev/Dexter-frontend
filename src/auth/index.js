@@ -20,7 +20,7 @@ export const getLiveRooms = () => {
         method: 'GET',
         headers: {
             Accept: 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
     })
         .then(response => response.json())
@@ -29,14 +29,14 @@ export const getLiveRooms = () => {
 
 }
 
-export const deleteLiveRoom = roomurl => {
-    return fetch(`${API}/livestream/delete`, {
-        method: 'POST',
+export const deleteLiveRoom = streamlink => {
+    return fetch(`${API}/livestream/findstreamlink?streamlink=${streamlink}`, {
+        method: 'DELETE',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(roomurl)
+        body: JSON.stringify(streamlink)
     })
         .then(response => response.json())
         .then(resjson => {return resjson})
