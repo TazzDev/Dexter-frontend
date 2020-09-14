@@ -29,7 +29,7 @@ const Signin = () => {
         setValues({ ...values, error: false, loading: true });
         //sending the info to backend and acquring the JWT 
         signin({ email, password }).then(data => {
-            console.log(data.token);
+            //console.log(data.token);
             if (data.error) {
                 setValues({ ...values, error: data.error, loading: false });
             } else {
