@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from '../auth/index'
 
+
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
         /*Whenever user will click on the button in navbar it wil show orange,otherwise white
@@ -72,7 +73,7 @@ const Menu = ({ history }) => (
                         onClick={() =>
                             signout(() => {
                                 history.push("/");
-                            }).then(()=>{
+                            }).then(() => {
                                 const modal = document.createElement('div');
                                 modal.innerHTML = "You've successfully signed out";
                                 modal.style.position = "absolute";
