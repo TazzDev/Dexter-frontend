@@ -3,6 +3,8 @@ import { getLiveRooms } from "../../auth";
 import Layout from "../../core/Layout";
 import DailyIframe from '@daily-co/daily-js';
 
+//image imports
+import Loading from '../../images/loading.gif';
 
 class CoursePage extends Component {
 
@@ -24,7 +26,7 @@ class CoursePage extends Component {
 
       streams.map(stream => {
         //for each stream we're checking if the topic of the stream is the same as the name of the course we're on, if so, we render it.
-        if(stream.topic == course) {
+        if(stream.topic === course) {
           count++;
           //creating a div / card element and adding the stream details to it
           let ccard = document.createElement('div');
@@ -54,7 +56,7 @@ class CoursePage extends Component {
         <Layout title={this.props.match.params.courseName} description='Course Description'>
         </Layout>
         <div id="status"></div>
-        <div id="active-streams"><h1>Content Loading, Please wait...</h1></div>
+        <div id="active-streams"><img src={Loading} alt="Loading please wait" className="load-gif-course"/></div>
       </div>
     );
   }

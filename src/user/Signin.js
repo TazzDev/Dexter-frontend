@@ -3,6 +3,9 @@ import { Redirect } from 'react-router-dom';
 import Layout from '../core/Layout';
 import { signin, authenticate, isAuthenticated } from '../auth';
 
+//image import
+import Loading from '../images/loading.gif';
+
 
 const Signin = () => {
     //React Hooks are used
@@ -66,7 +69,7 @@ const Signin = () => {
     const showLoading = () =>
         loading && (
             <div className="alert alert-info">
-                <h2>Loading...</h2>
+                <img src={Loading} className="load-gif" alt="Loading, please wait" loading="eager"/>
             </div>
         );
 
