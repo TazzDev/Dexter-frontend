@@ -96,7 +96,7 @@ class Dashboard extends Component {
             <Col>
               <CourseCard
                     alttext="HTML"
-                    image="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png"
+                    image="https://growtraffic-bc85.kxcdn.com/blog/wp-content/uploads/2019/03/HTML5-Ads.jpg"
                     redir="HTML"
                     title='HTML'
                     history={this.props.history}
